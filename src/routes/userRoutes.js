@@ -1,7 +1,12 @@
-const express = require('express');
-const authmiddleware = require('../middlewares/authMiddleware');
+const express = require("express");
+const router = express.Router();
+const authMiddleware = require("../middlewares/authMiddleware");
 const User = require("../models/User");
 
+router.get("/profile", authMiddleware, async (req, res)  => {
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user);
+});
 const {
     getUsers,
     getUserById,
@@ -9,10 +14,7 @@ const {
     deleteUser
 
 } = require(`../controllers/usercontroller`);
-
-const router = express.Router();
-
-router.get("/profile", authmiddleware, async (req, res)  => {
+router.get("/profile", authMiddleware, async (req, res)  => {
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
 });
