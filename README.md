@@ -1,14 +1,22 @@
-# Backend Express API
+# Express Auth API
 
-Simple REST API built with Node.js and Express.
+RESTful Backend API untuk autentikasi pengguna menggunakan Node.js, Express, MongoDB, dan JWT.
 
 ## 🚀 Features
-- Express REST API
-- MVC Structure
-- CRUD User
-- Environment Variables
+- User Registration
+- User Login
+- Password Hashing (bcrypt)
+- JWT Authentication
+- Protected Routes
+- MongoDB Atlas Integration
 
-## 📦 Install
-```bash
-npm install
-npm run dev
+## 🛠 Tech Stack
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JWT
+- bcrypt
+- dotenv
+
+## 📁 Project Structure
